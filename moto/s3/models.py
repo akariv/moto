@@ -35,7 +35,7 @@ class FakeKey(BaseModel):
         self.name = name
         self.value = value
         self.last_modified = datetime.datetime.utcnow()
-        self.acl = get_canned_acl('private')
+        self.acl = get_canned_acl('public-read')
         self.website_redirect_location = None
         self._storage_class = storage if storage else "STANDARD"
         self._metadata = {}
