@@ -67,7 +67,8 @@ class FakeKey(BaseModel):
         self._storage_class = storage_class
 
     def set_acl(self, acl):
-        self.acl = acl
+        pass
+        #self.acl = acl
 
     def append_to_value(self, value):
         self.value += value
@@ -344,7 +345,7 @@ class FakeBucket(BaseModel):
         self.rules = []
         self.policy = None
         self.website_configuration = None
-        self.acl = get_canned_acl('private')
+        self.acl = get_canned_acl('public-read')
         self.tags = FakeTagging()
         self.cors = []
 
@@ -436,7 +437,8 @@ class FakeBucket(BaseModel):
         raise UnformattedGetAttTemplateException()
 
     def set_acl(self, acl):
-        self.acl = acl
+        #self.acl = acl
+        pass
 
     @property
     def physical_resource_id(self):
